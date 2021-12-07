@@ -1,23 +1,18 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity, Text, View} from 'react-native';
 
-const MyButton = props => {
-    console.log(props);
+const MyButton = ({title = "title", onPress = () => {}, children}) => {
+    //console.log(props.children);
     return (
         <TouchableOpacity
-            style = {{
-                backgroundColor : '#3498db',
-                padding : 16,
-                margin : 10,
-                borderRadius: 8,
-            }}
-            onPress = {() => alert('Click!!!')}
+            onPress = {onPress}
+            pressRetentionOffset = {{bottom:100, top: 10, left: 10, right: 10 }}
         >
-            <Text style = {{color : 'white', fontSize : 24}}>
-                {/* MyButton~ */}
-                {props.children || props.title} 
-                {/* {props.title || props.children} 이면 두 버튼 다 'Button 속성 전달' */}
-            </Text>
+            <View style = {{backgroundColor: 'red', padding: 10, margin:10}}>
+                <Text style = {{color: 'white', fontSize: 24}}>
+                    {children || title}
+                </Text>
+            </View>
         </TouchableOpacity>
     );
 };
