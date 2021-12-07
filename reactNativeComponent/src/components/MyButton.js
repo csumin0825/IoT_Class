@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
 
-const MyButton = ({title = "title", onPress = () => {}, children}) => {
+const MyButton = ({title , onPress, children}) => {
     //console.log(props.children);
     return (
         <TouchableOpacity
@@ -15,6 +15,11 @@ const MyButton = ({title = "title", onPress = () => {}, children}) => {
             </View>
         </TouchableOpacity>
     );
+};
+
+MyButton.defaultProps = {
+    title: "default",
+    onPress : () =>{alert('defualt')},
 };
 
 export default MyButton;  
