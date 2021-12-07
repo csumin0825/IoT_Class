@@ -1,5 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
+import propTypes from 'prop-types';
 
 const MyButton = ({title , onPress, children}) => {
     //console.log(props.children);
@@ -17,9 +18,15 @@ const MyButton = ({title , onPress, children}) => {
     );
 };
 
-MyButton.defaultProps = {
+MyButton.defaultProps = {  // 파라미터 기본값 설정
     title: "default",
     onPress : () =>{alert('defualt')},
 };
+
+MyButton.propTypes = {  // 반드시 넘겨줘야할 값
+    title: propTypes.string,
+    onPress: propTypes.func,
+    title2 : propTypes.string.isRequired,
+}
 
 export default MyButton;  

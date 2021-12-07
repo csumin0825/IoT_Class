@@ -23,7 +23,7 @@ import MyButton from './components/MyButton';
 export default function App(){
     return (
         <View style = { styles.container}>
-            <MyButton />
+            <MyButton title = 'String'/>
             <MyButton title = "MyButton 2" onPress = { () => alert("2")}/>
             <MyButton>children</MyButton>
         </View>
