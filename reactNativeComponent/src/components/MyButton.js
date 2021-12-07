@@ -18,7 +18,7 @@ const MyButton = ({title , onPress, children}) => {
     );
 };
 
-MyButton.defaultProps = {  // 파라미터 기본값 설정
+MyButton.defaultProps = {  // 파라미터 기본값 설정 
     title: "default",
     onPress : () =>{alert('defualt')},
 };
