@@ -6,13 +6,7 @@ const MyButton = ({title , onPress, children}) => {
     //console.log(props.children);
     return (
         <TouchableOpacity
-            onPress = {() => console.log("press")}
-            onPressIn = {() => console.log("in")}
-            onPressOut = {() => console.log("out")}
-            onLongPress = {() => console.log("long")}
-
-            delayLongPress = {3000}
-
+            onPress = {onPress}
             pressRetentionOffset = {{bottom:100, top: 10, left: 10, right: 10 }}
         >
             <View style = {{backgroundColor: 'red', padding: 10, margin:10}}>
@@ -32,7 +26,7 @@ MyButton.defaultProps = {  // 파라미터 기본값 설정
 MyButton.propTypes = {  // 반드시 넘겨줘야할 값
     title: propTypes.string,
     onPress: propTypes.func,
-    // title2 : propTypes.string.isRequired,
+    title2 : propTypes.string.isRequired,
 }
 
 export default MyButton;  

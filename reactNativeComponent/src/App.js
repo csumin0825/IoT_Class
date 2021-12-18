@@ -1,31 +1,23 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, TextInput} from 'react-native';
 import MyButton from './components/MyButton';
-
-// const App =() =>{
-//     return(
-//         <View style = {{
-//             flex : 1,
-//             background : '#fff',
-//             alignItems : 'center',
-//             justifyContent : 'center',
-//         }}>
-
-//             <Text style = {{fontSize : 30, marginBottom : 10}}>
-//                 MyButton Component    
-//             </Text>
-//             <MyButton title  = 'Button 속성 전달'/>
-//             <MyButton title  = 'Button 속성 전달'> Childern Props </MyButton>
-//         </View>
-//     ); 
-// };
   
 export default function App(){
+    const [addition, setAddition] = useState(0);
+    const [ multiple, setMultiple] = useState(1);
+
     return (
         <View style = { styles.container}>
-            <MyButton title = 'String'/>
-            <MyButton title = "MyButton 2" onPress = { () => alert("2")}/>
-            <MyButton>children</MyButton>
+            {/* <Text stryle = {{fontSize:20}}>{addition}</Text>
+            <Text style = {{fontSize:20}}>{multiple}</Text> */}
+
+            <TextInput 
+            //onChange ={ event => console.log(event.nativeEvent.text)}
+                onChangeText = { text => console.log(text)}
+                style = {{borderWidth: 1, padding: 10, fontSize: 20}}
+                />
+            <MyButton title ="addition" onPress = {() => setAddition(addition +2)} />
+            <MyButton title ="multiple" onPress = {() => setMultiple(multiple *2)} />
         </View>
     );
 }
